@@ -1,51 +1,79 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Тестовый сайт — GitHub Pages</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тестовый сайт — дайджест ИИ</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #1e3a8a 0%, #6d28d9 50%, #db2777 100%);
-    color: #fff;
-    text-align: center;
-    padding: 24px;
+  :root{
+    --bg:#0b1020; --card:#141b33; --accent:#6ea8fe; --accent2:#8ef0c6;
+    --text:#e8ecf6; --muted:#9aa6c4;
   }
-  .card {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 24px;
-    padding: 56px 40px;
-    max-width: 560px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,sans-serif;
+    background:radial-gradient(1200px 600px at 20% -10%,#1b2450 0%,var(--bg) 60%);
+    color:var(--text); line-height:1.6;
   }
-  h1 { font-size: 2.2rem; margin-bottom: 16px; }
-  p { font-size: 1.1rem; line-height: 1.7; opacity: 0.92; }
-  .badge {
-    display: inline-block;
-    margin-top: 28px;
-    padding: 10px 22px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.18);
-    font-weight: 600;
-    letter-spacing: 0.3px;
+  .wrap{max-width:900px;margin:0 auto;padding:48px 20px 72px}
+  .badge{
+    display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent2);border:1px solid rgba(142,240,198,.35);border-radius:999px;
+    padding:6px 12px;margin-bottom:18px;
   }
-  .emoji { font-size: 3rem; display: block; margin-bottom: 16px; }
+  h1{font-size:38px;line-height:1.15;margin:0 0 12px}
+  h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{color:var(--muted);font-size:18px;margin:0 0 32px;max-width:720px}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .card{
+    background:linear-gradient(180deg,rgba(110,168,254,.08),rgba(255,255,255,0));
+    background-color:var(--card);border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;padding:20px;
+  }
+  .card h3{margin:0 0 8px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  .tag{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:.04em}
+  .status{
+    margin-top:28px;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);
+    border-top:1px solid rgba(255,255,255,.08);padding-top:20px;
+  }
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--accent2);box-shadow:0 0 12px var(--accent2)}
+  footer{margin-top:36px;color:#6f7ba0;font-size:13px}
+  a{color:var(--accent)}
 </style>
 </head>
 <body>
-  <div class="card">
-    <span class="emoji">🚀</span>
-    <h1>Сайт работает!</h1>
-    <p>Это тестовая страница, подготовленная ИИ-агентом и опубликованная через <strong>GitHub Pages</strong>.</p>
-    <div class="badge">✅ Публикация успешна</div>
+<div class="wrap">
+  <div class="badge">Тестовая публикация · GitHub Pages</div>
+  <h1>Тестовый сайт <span>работает</span> ✅</h1>
+  <p class="lead">Это демонстрационная страница, собранная агентом: проверка публикации, вёрстки и автосборки GitHub Pages. Ниже — пример «дайджеста» из новостей ИИ.</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="tag">МОДЕЛИ</div>
+      <h3>Gemini 4 Carbon</h3>
+      <p>Флагман Google с фокусом на кибербезопасность и код; доступ сначала у доверенных защитников.</p>
+    </div>
+    <div class="card">
+      <div class="tag">OPEN WEIGHTS</div>
+      <h3>Mistral Large 4</h3>
+      <p>Открытые веса флагмана — можно скачать и запускать локально.</p>
+    </div>
+    <div class="card">
+      <div class="tag">БИЗНЕС</div>
+      <h3>Anthropic и IPO</h3>
+      <p>Компания подала S-1 в SEC; рынок ждёт официальный файл.</p>
+    </div>
+    <div class="card">
+      <div class="tag">БЕЗОПАСНОСТЬ</div>
+      <h3>Бэкдор в расширении</h3>
+      <p>Троянизированное расширение для редактора раздавало SSH-бэкдоры.</p>
+    </div>
   </div>
+
+  <div class="status"><span class="dot"></span> Сайт успешно опубликован и доступен по HTTPS.</div>
+
+  <footer>Тестовый проект · только демонстрация. Данные примерные.</footer>
+</div>
 </body>
 </html>
